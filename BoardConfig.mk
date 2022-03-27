@@ -179,3 +179,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/mido/BoardConfigVendor.mk
+
+# Quick Tap
+TARGET_SUPPORTS_QUICK_TAP := true
