@@ -33,6 +33,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
 # Build
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_DUP_RULES := true
 
 # Device Properties
 TARGET_ODM_PROP := $(DEVICE_PATH)/odm.prop
@@ -45,6 +46,7 @@ TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
 TARGET_KERNEL_CONFIG := mido_defconfig
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 loop.max_part=16 androidboot.usbconfigfs=true
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
@@ -180,5 +182,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Inherit from the proprietary version
 -include vendor/xiaomi/mido/BoardConfigVendor.mk
 
-# Quick Tap
-TARGET_SUPPORTS_QUICK_TAP := true
+# HW crypto
+TARGET_HW_DISK_ENCRYPTION := true
